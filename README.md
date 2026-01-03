@@ -16,7 +16,7 @@ A simple Django web application that generates QR codes from text or URLs and al
 ## Setup
 
 ```bash
-git clone https://github.com/your-username/qr-code-generator.git
+git clone https://github.com/VahagMardyan/qr_code_generator_django.git
 cd qr-code-generator
 python -m venv venv
 venv\Scripts\activate
