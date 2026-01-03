@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+#img-block {
+    width: 220px;
+    min-height: 260px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.btn-download {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    background-color: #28a745;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+
+.btn-download:hover {
+    background-color: #1e7e34;
+}
+
+form {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 250px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#btn-generate {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.6s;
+}
+
+#btn-generate:hover {
+    background-color: #0056b3;
+}
+
+img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    form {
+        width: 100%;
+        max-width: 400px;
+        padding: 25px;
+    }
+
+    form h1 {
+        font-size: 22px;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+
+    button {
+        width: 80%;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    #img-block {
+        width: 200px;
+        min-height: 240px;
+    }
+
+    .btn-download {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 18px;
+    }
+
+    form h1 {
+        font-size: 18px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    #img-block {
+        width: 170px;
+        min-height: 210px;
+    }
+
+    img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .btn-download {
+        font-size: 12px;
+        padding: 6px;
+    }
+}

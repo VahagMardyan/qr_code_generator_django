@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr Code maker</title>
+    <link rel="stylesheet" href="{% static 'qr_code/css/style.css' %}">
+    <script defer src="{% static 'qr_code/js/script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <h1>QR Code Generator</h1>
+            {% csrf_token %}
+            <input type="text" id="url" name="url" autocomplete="off" 
+                title="Shift+Enter"
+                placeholder="Input URL or some text" required>
+            <button type="submit" id="btn-generate" title="Enter">Generate QR Code</button>
+        </form>
+        {% if qr_url %}
+            <div id="img-block">
+                <img src="{% static qr_url %}" alt="QR Code">
+                <a href="{% url 'download_qr' qr_filename %}" class="btn-download">Download QR</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
