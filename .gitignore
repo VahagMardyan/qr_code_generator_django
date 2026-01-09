@@ -20,4 +20,4 @@ env/
 Thumbs.db
 
 # Generated QR images
-qr_code/static/qr_code/qr_code_img/
+qr_code/static/qr_code/qr_code_img/*

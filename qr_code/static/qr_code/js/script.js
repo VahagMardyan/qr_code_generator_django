@@ -16,3 +16,4 @@ if(btn_download) {
         document.body.removeChild(link);
     });    
 }
+
