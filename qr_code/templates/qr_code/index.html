@@ -14,7 +14,7 @@
             <h1>QR Code Generator</h1>
             {% csrf_token %}
             <input type="text" id="url" name="url" autocomplete="off" 
-                title="Shift+Enter"
+                title="Shift+Enter" value="{{ input_value }}"
                 placeholder="Input URL or some text" required>
             <button type="submit" id="btn-generate" title="Enter">Generate QR Code</button>
         </form>
@@ -27,7 +27,7 @@
         </button>
         </form>
             <div id="img-block">
-                <img src="{% static qr_url %}" alt="QR Code">
+                <img src="{% static qr_url %}" alt="QR Code" title="{{ input_value }}">
                 <a href="{% url 'download_qr' qr_filename %}" class="btn-download">Download QR</a>
             </div>
         {% endif %}

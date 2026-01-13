@@ -10,15 +10,17 @@ from .services import make_qr
 def index(request):
     qr_url = None
     qr_filename = None
+    text = ""
 
     if request.method == 'POST':
-        url = request.POST.get("url")
-        qr_url = make_qr(url)  
+        text = request.POST.get("url")
+        qr_url = make_qr(text)  
         qr_filename = os.path.basename(qr_url)
 
     return render(request, "qr_code/index.html", {
         "qr_url": qr_url,
         "qr_filename": qr_filename,
+        "input_value" : text,
     })
 
 
