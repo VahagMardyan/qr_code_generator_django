@@ -18,17 +18,14 @@
                 placeholder="Input URL or some text" required>
             <button type="submit" id="btn-generate" title="Enter">Generate QR Code</button>
         </form>
-        {% if qr_url %}
-        <form method="post" action="{% url 'delete_all_qrs' %}"
-            onsubmit="return confirm('Are you sure? This will delete all generated qr codes.');">
-        {% csrf_token %}
-        <button type="submit" id="btn-delete">
-            Delete all QR Codes
-        </button>
-        </form>
+
+        {% if qr_code_data %}
             <div id="img-block">
-                <img src="{% static qr_url %}" alt="QR Code" title="{{ input_value }}">
-                <a href="{% url 'download_qr' qr_filename %}" class="btn-download">Download QR</a>
+                <img src="data:image/png;base64,{{ qr_code_data }}" alt="QR Code" title="{{ input_value }}">
+                
+                <a href="data:image/png;base64,{{ qr_code_data }}" 
+                   download="qrcode.png" 
+                   class="btn-download">Download QR</a>
             </div>
         {% endif %}
     </div>

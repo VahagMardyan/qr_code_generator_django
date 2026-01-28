@@ -8,19 +8,17 @@ from .services import make_qr
 
 
 def index(request):
-    qr_url = None
-    qr_filename = None
+    qr_code_data = None
     text = ""
 
     if request.method == 'POST':
         text = request.POST.get("url")
-        qr_url = make_qr(text)  
-        qr_filename = os.path.basename(qr_url)
+        # Այստեղ ստանում ենք Base64 տողը
+        qr_code_data = make_qr(text)
 
     return render(request, "qr_code/index.html", {
-        "qr_url": qr_url,
-        "qr_filename": qr_filename,
-        "input_value" : text,
+        "qr_code_data": qr_code_data,
+        "input_value": text,
     })
 
 
