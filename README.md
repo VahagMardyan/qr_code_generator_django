@@ -1,4 +1,4 @@
-Visit: https://qr-code-generator-django.onrender.com/
+Visit: https://qr-code-generator-1nk5.onrender.com
 
 # QR Code Generator (Django)
 
