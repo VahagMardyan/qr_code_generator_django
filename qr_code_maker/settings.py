@@ -26,13 +26,11 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "qr-code-generator-django.onrender.com/",
-    "localhost",
-    "127.0.0.1"
-]
+ALLOWED_HOSTS = [ '*' ]
 
 CSRF_TRUSTED_ORIGINS = ["https://qr-code-generator-django.onrender.com"]
+
+WHITENOISE_MANIFEST_STRICT = False
 
 # Application definition
 
@@ -47,8 +45,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
