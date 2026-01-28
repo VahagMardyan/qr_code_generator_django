@@ -27,10 +27,12 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-secret-key")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://qr-code-generator-django.onrender.com/",
+    "qr-code-generator-django.onrender.com/",
     "localhost",
     "127.0.0.1"
 ]
+
+CSRF_TRUSTED_ORIGINS = ["https://qr-code-generator-django.onrender.com"]
 
 # Application definition
 
