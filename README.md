@@ -1,3 +1,5 @@
+Visit: https://qr-code-generator-django.onrender.com/
+
 # QR Code Generator (Django)
 
 A simple Django web application that generates QR codes from text or URLs and allows downloading them.
